@@ -1,0 +1,138 @@
+# Ignore system and IDE files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+
+# Ignore dependencies
+node_modules/
+vendor/
+
+# Ignore compiled files
+*.log
+*.lock
+*.tmp
+*.bak
+*.pyc
+*.class
+
+# Ignore user-specific files
+*.iml
+*.log
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore package managers
+yarn-error.log
+npm-debug.log
+npm-debug.log.*
+pnpm-debug.log
+pnp-debug.log
+logs/
+*.tgz
+
+# Ignore build artifacts and compiled code
+build/
+dist/
+*.min.js
+
+# Ignore configuration files
+*.config.js
+
+# Ignore logs and temporary files
+log/
+temp/
+tmp/
+*.log
+
+# Ignore auto-generated files
+public/uploads/
+public/assets/
+
+# Ignore local development files
+db.sqlite
+npm-debug.log
+yarn-error.log
+
+# Ignore OS-generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Ignore Jekyll build directory
+_site/
+
+# Ignore Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Ignore Bower dependencies
+bower_components/
+
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore Ruby bundle
+.bundler/
+.bundle/
+
+# Ignore cache files
+.cache/
+
+# Ignore logs and backups
+*.log
+*.bak
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+venv/
+env/
+ENV/
+
+# Ignore IDE-specific files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode/
+
+# Ignore data and database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Ignore archives, compressed files, and binary files
+*.zip
+*.rar
+*.gz
+*.7z
+*.tar
+*.bak
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.mp3
+*.mp4
+*.avi
+*.swf
+*.bmp
+*.ttf
+*.woff
+*.woff2
