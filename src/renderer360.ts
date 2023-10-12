@@ -25,9 +25,13 @@ export class Renderer360{
         const width = this.web360Context.getDimensions().width;
         const height = this.web360Context.getDimensions().height;
         this.renderer.setSize(width, height);
-
-        console.log(this.web360Context.getContainer());
         this.web360Context.getContainer().appendChild(this.renderer.domElement);
+    }
+
+    resizeRenderer(){
+        const width = this.web360Context.getDimensions().width;
+        const height = this.web360Context.getDimensions().height;
+        this.renderer.setSize(width, height);
     }
 
     getRenderer(){

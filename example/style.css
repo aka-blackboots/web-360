@@ -8,6 +8,16 @@ html, body {
     overflow: hidden;
 }
 
+.info{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    padding: 5px 0;
+}
+
 #three-container{
     position: fixed;
     top: 0;

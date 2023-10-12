@@ -28,6 +28,8 @@ export class Web360{
         this.renderer360 = new Renderer360(this);
 
         this.addControls();
+        this.setupDefaultEvents();
+
         this.startExperience();
     }
 
@@ -91,5 +93,15 @@ export class Web360{
     }
     startExperience(){
         this.renderer360.animate()
+    }
+    private setupDefaultEvents(){
+        window.addEventListener('resize', ()=>{
+            this.dimensions = {
+                width: this.viewer.container.clientWidth,
+                height: this.viewer.container.clientHeight
+            }
+            this.camera360.resizeCamera();
+            this.renderer360.resizeRenderer();
+        })
     }
 }

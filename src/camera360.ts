@@ -13,9 +13,7 @@ export class Camera360{
         this.setupCamera();
     }
 
-    setupCamera(){
-        console.log("Width"+this.web360Context.getContainer().clientWidth);
-
+    private setupCamera(){
         this.camera = new PerspectiveCamera(
             75,
             this.web360Context.getContainer().clientWidth / this.web360Context.getContainer().clientHeight,
@@ -23,6 +21,11 @@ export class Camera360{
             1000
         );
         this.camera.position.set(0, 0, 0.1);
+    }
+
+    resizeCamera(){
+        this.camera.aspect = this.web360Context.getContainer().clientWidth / this.web360Context.getContainer().clientHeight;
+        this.camera.updateProjectionMatrix();
     }
 
     getCamera(){

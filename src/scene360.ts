@@ -3,7 +3,15 @@ import {
     Scene,
     BoxGeometry,
     MeshBasicMaterial,
-    Mesh, AxesHelper, GridHelper, AmbientLight, DirectionalLight, SphereGeometry, TextureLoader
+    Mesh,
+    AxesHelper,
+    GridHelper,
+    AmbientLight,
+    DirectionalLight,
+    SphereGeometry,
+    TextureLoader,
+    MeshStandardMaterial,
+    DoubleSide
 } from "three";
 
 export class Scene360{
@@ -14,6 +22,7 @@ export class Scene360{
         this.scene = new Scene();
 
         this.addAxes();
+        this.addLights();
     }
 
     generate360Container(){
@@ -30,12 +39,8 @@ export class Scene360{
 
     addLights(){
         // Add Ambient Light
-        const ambientLight = new AmbientLight(0x404040); // Soft white light
+        const ambientLight = new AmbientLight(0xffffff, 1); // Soft white light
         this.scene.add(ambientLight);
-
-        const directionalLight = new DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(1, 1, 1); // Adjust the direction of the light
-        this.scene.add(directionalLight);
     }
 
     addImageToScene(){
@@ -53,9 +58,14 @@ export class Scene360{
         sphereGeometry.scale(-1, 1, 1); // Invert the sphere to have the correct orientation
 
         const textureLoader = new TextureLoader();
-        const texture = textureLoader.load("./assets/image1.jpg");
+        const texture = textureLoader.load("./assets/image360.jpg");
 
-        const sphereMaterial = new MeshBasicMaterial({ map: texture });
+        const sphereMaterial = new MeshStandardMaterial({
+            map: texture,
+            metalness: 0.1,
+            roughness: 0.9,
+            color: 0xffffff
+        });
         const sphere = new Mesh(sphereGeometry, sphereMaterial);
         this.scene.add(sphere);
     }
