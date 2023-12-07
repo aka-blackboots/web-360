@@ -14,5 +14,6 @@ const experience = new Web360({
     container: threeCanvas
 })
 
+// Adding 360 Image
 const globe = experience.createGlobe("./assets/image360.jpg");
 globe.addPopup(new Vector3(0,0,0));
