@@ -1,5 +1,6 @@
 //Object to store the size of the viewport
 import {Web360} from "../dist/index.js";
+import {Vector3} from "three";
 
 const size = {
     width: window.innerWidth,
@@ -13,4 +14,5 @@ const experience = new Web360({
     container: threeCanvas
 })
 
-experience.addTestCube();
+const globe = experience.createGlobe("./assets/image360.jpg");
+globe.addPopup(new Vector3(0,0,0));
