@@ -18,7 +18,7 @@ export class Camera360{
             75,
             this.web360Context.getContainer().clientWidth / this.web360Context.getContainer().clientHeight,
             0.1,
-            1000
+            10000
         );
         this.camera.position.set(0, 0, 0.1);
     }

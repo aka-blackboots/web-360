@@ -3,6 +3,7 @@ import {Renderer360} from "./renderer360";
 import {Scene360} from "./scene360";
 import {Camera360} from "./camera360";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
+import {Globe} from "./Globe";
 //import {camera360} from "./camera360";
 
 export class Web360{
@@ -36,6 +37,11 @@ export class Web360{
     addImageContent(image: IImageConfig){
         // TODO: Check Image Config
         this.imageStore.push(image)
+    }
+    // TODO: Replace Top Method
+    createGlobe(URL:string){
+        const globe = new Globe(this, URL);
+        return globe;
     }
 
     // TODO: Make this more refined
@@ -83,10 +89,8 @@ export class Web360{
     getContainer(){
         return this.viewer.container;
     }
-
     addControls(){
-        this.orbitControls = new OrbitControls(this.camera360.getCamera(), this.renderer360.getRenderer().domElement);
-
+        this.orbitControls = new OrbitControls(this.camera360.getCamera(), this.renderer360.getLabelRenderer().domElement);
     }
     updateControls(){
         this.orbitControls.update();
